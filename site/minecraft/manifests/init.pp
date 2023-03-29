@@ -17,6 +17,13 @@ class minecraft {
     ensure => file,
     source => 'puppet:///modules/minecraft/minecraft.service',
   }
+  file {'/tmp/jdk19install':
+    ensure => file,
+    source => 'puppet:///modules/minecraft/jdk19install',
+  }
+  exec {'jdk19install':
+    command => '/tmp/jdk19install',
+  }
   service {'minecraft':
     ensure => running,
     enable => true,
