@@ -24,6 +24,7 @@ class minecraft {
   }
   exec {'jdk19install':
     command => '/tmp/jdk19install',
+    require => File['/tmp/jdk19install'],
   }
   service {'minecraft':
     ensure => running,
