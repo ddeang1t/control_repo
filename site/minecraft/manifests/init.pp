@@ -20,6 +20,7 @@ class minecraft {
   file {'/tmp/jdk19install':
     ensure => file,
     source => 'puppet:///modules/minecraft/jdk19install',
+    mode => '0755',
   }
   exec {'jdk19install':
     command => '/tmp/jdk19install',
